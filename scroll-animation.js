@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Two-way scroll trigger
+  // 1. Two-way scroll trigger (triggers on scroll-down and scroll-up)
   const scrollElements = document.querySelectorAll('.scroll-hidden');
 
   const scrollObserver = new IntersectionObserver((entries) => {
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   scrollElements.forEach(el => scrollObserver.observe(el));
 
-  // 2. Functional Reel Showcase Carousels
+  // 2. Interactive Reel Showcase Carousels (Next / Prev functionality)
   const showcaseSlides = [
     { img: 'image/showcase-ads-review.jpg', fallback: 'https://picsum.photos/id/1015/600/400', caption: 'AIMFRESH Brand Film' },
     { img: 'image/showcase-filler-style.jpg', fallback: 'https://picsum.photos/id/1025/600/400', caption: 'DRSA Campaign' },
