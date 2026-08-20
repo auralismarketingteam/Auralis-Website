@@ -1,3 +1,16 @@
+/* --- RESPONSIVE CANVAS SCALER (Locks all desktop layout & offsets) --- */
+#viewport-scaler {
+  width: 1440px;
+  margin: 0 auto;
+  transform-origin: top center;
+}
+
+@media (max-width: 1440px) {
+  #viewport-scaler {
+    /* Automatically scales your exact desktop pixels to fit any tablet or phone screen */
+    zoom: calc(100vw / 1440);
+  }
+}
 :root {
   --purple: #6a11a8;
   --purple-light: #8b3fd1;
