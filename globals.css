@@ -236,6 +236,16 @@
     100% { transform: translateY(0); }
   }
   
+  .scroll-hidden {
+    opacity: 0;
+    transform: translate(var(--offset-x), calc(var(--offset-y) + 30px));
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .scroll-hidden.slide-left { transform: translate(calc(var(--offset-x) - 40px), var(--offset-y)); }
+  .scroll-hidden.slide-right { transform: translate(calc(var(--offset-x) + 40px), var(--offset-y)); }
+  .scroll-hidden.scale-in { transform: translate(var(--offset-x), var(--offset-y)) scale(0.94); }
+  .scroll-visible { opacity: 1; transform: translate(var(--offset-x), var(--offset-y)) scale(1) !important; }
+
   
   /* ==========================================================================
      2. DESKTOP SECTION (Screens >= 1024px)
@@ -250,16 +260,7 @@
     .desktop-only { display: block; }
     .mobile-only { display: none !important; }
   
-    .scroll-hidden {
-      opacity: 0;
-      transform: translate(var(--offset-x), calc(var(--offset-y) + 30px));
-      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .scroll-hidden.slide-left { transform: translate(calc(var(--offset-x) - 40px), var(--offset-y)); }
-    .scroll-hidden.slide-right { transform: translate(calc(var(--offset-x) + 40px), var(--offset-y)); }
-    .scroll-hidden.scale-in { transform: translate(var(--offset-x), var(--offset-y)) scale(0.94); }
-    .scroll-visible { opacity: 1; transform: translate(var(--offset-x), var(--offset-y)) scale(1) !important; }
-  
+    
     nav ul {
       display: flex;
       gap: 36px;
@@ -755,6 +756,7 @@
       text-align: center;
     }
   
+    
     .hero-content {
       transform: none !important;
     }
